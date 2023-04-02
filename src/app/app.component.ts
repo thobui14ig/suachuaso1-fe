@@ -9,19 +9,13 @@ export class AppComponent {
   title = 'chat';
   constructor(private elementRef: ElementRef, private renderer: Renderer2) { }
 
-  ngOnInit() {
-    const importTE = async () => {
-      await import('tw-elements');
-    };
-    importTE();
-  }
 
-  ngAfterViewInit() {
-    const button = this.elementRef.nativeElement.querySelector('#menu-button');
-    const menu = this.elementRef.nativeElement.querySelector('#menu');
+  // ngAfterViewInit() {
+  //   const button = this.elementRef.nativeElement.querySelector('#menu-button');
+  //   const menu = this.elementRef.nativeElement.querySelector('#menu');
   
-    this.renderer.listen(button, 'click', () => {
-      menu.classList.toggle('hidden');
-    });
-  }
+  //   this.renderer.listen(button, 'click', () => {
+  //     menu.classList.toggle('hidden');
+  //   });
+  // }
 }

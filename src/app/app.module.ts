@@ -8,6 +8,9 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
+import { ChatComponent } from './chat/chat.component';
+import { UserOnlineComponent } from './chat/components/user-online/user-online.component';
+import { ChatBodyComponent } from './chat/components/chat-body/chat-body.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { HomeComponent } from './home/home.component';
     SidebarComponent,
     AboutComponent,
     ContactComponent,
-    HomeComponent
+    HomeComponent,
+    ChatComponent,
+    ChatBodyComponent,
+    UserOnlineComponent
   ],
   imports: [
     BrowserModule,
