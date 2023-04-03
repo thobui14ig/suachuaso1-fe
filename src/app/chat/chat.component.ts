@@ -8,4 +8,14 @@ import { Component } from '@angular/core';
 export class ChatComponent {
   // abc: string;
   title = 'hello-world';
+  roomId: number = 0;
+
+
+  public handleAddMessage(){
+    alert()
+  }
+
+  setRoomId(roomId: number){
+    this.roomId = roomId
+  }
 }

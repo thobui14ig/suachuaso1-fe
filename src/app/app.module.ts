@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { ChatComponent } from './chat/chat.component';
 import { UserOnlineComponent } from './chat/components/user-online/user-online.component';
 import { ChatBodyComponent } from './chat/components/chat-body/chat-body.component';
+import { ApiService } from './api/api.service';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,7 @@ import { ChatBodyComponent } from './chat/components/chat-body/chat-body.compone
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

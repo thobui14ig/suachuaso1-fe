@@ -1,8 +1,8 @@
 <div class="flex flex-row chat-component">
     <div class="bg-gray-100 flex-grow flex p-3">
-        <app-chat-body [title]="title"></app-chat-body>
+        <app-chat-body [title]="title" [roomId]="roomId"></app-chat-body>
     </div>
-    <div class="bg-gray-200 w-1/4 p-1" style="width: 300px">
-        <app-user-online></app-user-online>
+    <div class="bg-gray-200 w-1/4 p-1 overflow-y-scroll">
+        <app-user-online [handleAddMessage]="handleAddMessage" [setRoomId]="setRoomId" [context]="this"></app-user-online>
     </div>
 </div>
