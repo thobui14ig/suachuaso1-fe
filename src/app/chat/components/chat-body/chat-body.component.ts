@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-chat-body',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./chat-body.component.scss']
 })
 export class ChatBodyComponent {
-
-}
+  // @Input() message: string;
+} 
