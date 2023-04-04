@@ -14,11 +14,9 @@ export class ChatBodyComponent {
   constructor(private chatService: ChatService) {}
 
   ngOnInit() {
-    this.chatService.selectedMessageId$.subscribe((messageId) => {
-      if (messageId) {
-        console.log(33333, messageId)
-        // Lấy nội dung của tin nhắn từ server bằng ID của tin nhắn
-        this.messageContent = `${messageId}`;
+    this.chatService.roomName$.subscribe((roomName) => {
+      if (roomName) {
+        this.messageContent = `${roomName}`;
       } else {
         this.messageContent = 'Chưa chọn tin nhắn nào.';
       }

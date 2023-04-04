@@ -9,6 +9,7 @@ export class ChatComponent {
   // abc: string;
   title = 'hello-world';
   roomId: number = 0;
+  roomName: string = '';
 
 
   public handleAddMessage(){

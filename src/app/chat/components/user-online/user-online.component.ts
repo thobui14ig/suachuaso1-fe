@@ -31,12 +31,10 @@ export class UserOnlineComponent {
               isRead = item?.chatUser?.isRead;
             }
 
-
-
             if (item?.type === 'user') {
               return {
                 id: item._id,
-                name: 'hehe',
+                name: 'Chưa lấy tên',
                 type: item.type,
                 isRead,
                 message: item?.messages?.content,
@@ -70,8 +68,8 @@ export class UserOnlineComponent {
     this.context.setRoomId(new Date().getTime())
   }
 
-  selectMessage(messageId: string) {
-    this.chatService.setSelectedMessageId(messageId);
+  selectMessage(room: any) {
+    this.chatService.setRoom(room);
   }
   
 }
