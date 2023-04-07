@@ -1,5 +1,9 @@
+import { ChatApi } from './../../../../api/chat.api';
 import { Component, Input } from '@angular/core';
 import { ChatService } from '../../chat.service';
+import { MESSAGE } from 'src/app/types/chat.type';
+import { distinctUntilChanged } from 'rxjs';
+
 
 @Component({
   selector: 'app-chat-body',
@@ -9,17 +13,27 @@ import { ChatService } from '../../chat.service';
 export class ChatBodyComponent {
   @Input()  title!: string;
   @Input()  roomId!: number;
-  messageContent!: string;
+  roomName!: string;
+  messages!: MESSAGE[];
 
-  constructor(private chatService: ChatService) {}
+  constructor(private chatService: ChatService, private chatApi: ChatApi) {}
 
   ngOnInit() {
     this.chatService.roomName$.subscribe((roomName) => {
       if (roomName) {
-        this.messageContent = `${roomName}`;
+        this.roomName = `${roomName}`;
       } else {
-        this.messageContent = 'Chưa chọn tin nhắn nào.';
+        this.roomName = 'Chưa chọn tin nhắn nào.';
       }
+    });
+
+    this.chatService.selectedMessageId$.pipe(
+      distinctUntilChanged()
+    ).subscribe(async (roomId) => {
+        const { data } = await this.chatApi.getMessages(roomId)
+        this.messages = data.messages
+        console.log(9999, data.messages)
+    
     });
   }
 

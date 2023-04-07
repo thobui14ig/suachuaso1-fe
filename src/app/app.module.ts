@@ -17,6 +17,7 @@ import { NzMenuModule } from 'ng-zorro-antd/menu';
 import { ChatComponent } from './pages/chat/chat.component';
 import { ChatBodyComponent } from './pages/chat/components/chat-body/chat-body.component';
 import { UserOnlineComponent } from './pages/chat/components/user-online/user-online.component';
+import { LoginComponent } from './pages/auth/login/login.component';
 
 registerLocaleData(en);
 
@@ -25,7 +26,8 @@ registerLocaleData(en);
     AppComponent,
     ChatComponent,
     ChatBodyComponent,
-    UserOnlineComponent
+    UserOnlineComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

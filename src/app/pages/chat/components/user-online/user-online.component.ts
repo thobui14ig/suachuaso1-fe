@@ -60,8 +60,6 @@ export class UserOnlineComponent {
     .catch((error) => {
       console.error(error);
     });
-
-    console.log(999, this.messages)
   }
 
   handleAdd(){
