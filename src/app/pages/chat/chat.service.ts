@@ -5,10 +5,10 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class ChatService {
-    private selectedMessageIdSource = new BehaviorSubject<string>('');
+    private selectedMessageIdSource = new BehaviorSubject<string|null>(null);
     selectedMessageId$ = this.selectedMessageIdSource.asObservable();
 
-    private roomName = new BehaviorSubject<string>('');
+    private roomName = new BehaviorSubject<string|null>(null);
     roomName$ = this.roomName.asObservable();
   
     getRoom(messageId: string) {

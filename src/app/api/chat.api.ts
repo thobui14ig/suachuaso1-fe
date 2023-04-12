@@ -14,4 +14,8 @@ export class ChatApi{
     getMessages(roomId: string){
         return this.api.get<CHAT>(`${this.url}/get-messages/${roomId}/0`)
     }
+
+    getRoom(roomId: string){
+        return this.api.get<Omit<CHAT, '_id' | 'messages'>>(`${this.url}/get-room/${roomId}`)
+    }
 }

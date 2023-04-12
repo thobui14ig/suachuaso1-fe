@@ -46,11 +46,17 @@
       <nz-header>
         <div class="app-header">
           <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-              <span class="trigger"
-                nz-icon
-                [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-              ></span>
+            <span
+              class="trigger"
+              nz-icon
+              [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
+            ></span>
           </span>
+          <div class="logout-button">
+            <!-- Thêm đoạn mã cho nút đăng xuất -->
+            <span >{{ user?.name }}</span>
+            <button  (click)="logout()" class="btn-logout" >Đăng xuất</button>
+          </div>
         </div>
       </nz-header>
       <nz-content>

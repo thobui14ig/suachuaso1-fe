@@ -4,6 +4,7 @@ export interface CHAT {
     _id: string;
     users: string[];
     type: string;
+    name: string;
     messages: MESSAGE[];
   }
 

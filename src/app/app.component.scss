@@ -18,7 +18,7 @@
 
 .header-trigger {
   height: 64px;
-  padding: 20px 24px;
+  padding: 0 20px;
   font-size: 20px;
   cursor: pointer;
   transition: all .3s,padding 0s;
@@ -59,6 +59,7 @@ nz-header {
   padding: 0;
   width: 100%;
   z-index: 2;
+
 }
 
 .app-header {
@@ -74,4 +75,24 @@ nz-header {
   padding: 5px;
   background: #fff;
   height: 100%;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logout-button {
+  margin-right: 16px;
+  font-size: 16px/* 20px */;
+  line-height: 1.75rem/* 28px */;
+}
+
+.btn-logout {
+  border: none;
+  cursor: pointer;
+  font-size: 16;
+  margin-left: 20px;
+
 }

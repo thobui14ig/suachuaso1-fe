@@ -1,16 +1,8 @@
-export interface ResponseLogin {
-    refreshToken: string;
-    accessToken: string;
-    user: UserInfoType;
-  }
+import { UserInfoType } from "./user.type";
 
-export interface UserInfoType {
-_id: string;
-email: string;
-name: string;
-createdAt: string;
-updatedAt: string;
-password: string;
-refreshToken: string;
-role: number;
+export interface ResponseLogin {
+  refreshToken: string;
+  accessToken: string;
+  user: UserInfoType;
 }
+

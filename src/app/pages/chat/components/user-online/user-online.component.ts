@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ApiService } from 'src/app/api/api.service';
 import { ChatService } from '../../chat.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-user-online',
@@ -14,7 +15,7 @@ export class UserOnlineComponent {
 
   messages: any[] = [];
 
-  constructor(private apiService: ApiService, private chatService: ChatService) {
+  constructor(private apiService: ApiService, private chatService: ChatService, private router: Router) {
     
   }
 
@@ -67,7 +68,7 @@ export class UserOnlineComponent {
   }
 
   selectMessage(room: any) {
-    this.chatService.setRoom(room);
+    this.router.navigate([`chat/${room?.id}`]);
   }
   
 }

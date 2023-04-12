@@ -7,7 +7,7 @@ import { ResponseLogin } from "../types/auth.type";
 
 @Injectable({
     providedIn: 'root'
-  })
+})
 export class AuthApi{
     private url = '/auth'
     constructor(private api: ApiService){
