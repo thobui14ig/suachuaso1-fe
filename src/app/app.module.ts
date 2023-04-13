@@ -1,3 +1,4 @@
+import { DayjsPipe } from './pipes/dayjs.pipe';
 import { AppRoutingModule } from './app-routing.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -23,6 +24,7 @@ registerLocaleData(en);
 
 @NgModule({
   declarations: [
+    DayjsPipe,
     AppComponent,
     ChatComponent,
     ChatBodyComponent,

@@ -1,13 +1,12 @@
-import { UserService } from './../../../user/user.service';
-import { ChatApi } from './../../../../api/chat.api';
 import { Component, Input } from '@angular/core';
-import { ChatService } from '../../chat.service';
-import { MESSAGE } from 'src/app/types/chat.type';
-import { distinctUntilChanged } from 'rxjs';
-import { UserInfoType } from 'src/app/types/user.type';
 import { ActivatedRoute } from '@angular/router';
-import { TYPE_CHAT } from 'src/app/enum/chat.enum';
 import { UserApi } from 'src/app/api/user.api';
+import { TYPE_CHAT } from 'src/app/enum/chat.enum';
+import { MESSAGE } from 'src/app/types/chat.type';
+import { UserInfoType } from 'src/app/types/user.type';
+import { ChatService } from '../../chat.service';
+import { ChatApi } from './../../../../api/chat.api';
+import { UserService } from './../../../user/user.service';
 
 
 @Component({
@@ -49,27 +48,12 @@ export class ChatBodyComponent {
       }
 
     });
-
-    
-
-    this.chatService.roomName$.subscribe((roomName) => {
-      if (roomName) {
-        this.roomName = `${roomName}`;
-      } else {
-        this.roomName = 'Chưa chọn tin nhắn nào.';
-      }
-    });
-
-    // this.chatService.selectedMessageId$.pipe(
-    //   distinctUntilChanged()//từ lần click tiếp theo nếu trùng sẽ không gọi lại api
-    // ).subscribe(async (roomId) => {
-    //   if(roomId){
- 
+    // this.chatService.roomName$.subscribe((roomName) => {
+    //   if (roomName) {
+    //     this.roomName = `${roomName}`;
+    //   } else {
+    //     this.roomName = 'Chưa chọn tin nhắn nào.';
     //   }
-
-    
     // });
   }
-
-  
 } 
